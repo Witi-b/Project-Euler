@@ -1,3 +1,5 @@
+# Currently very slow 
+
 def nth_prime_number(n):
     prime_count = 1
     numb = 1
