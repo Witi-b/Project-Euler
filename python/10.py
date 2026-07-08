@@ -1,19 +1,19 @@
-#Create an array of primes to test instead of testing every number
+#Find the sum of all the primes below 2 million
+#Very slow
 
 PRIMES = [2,3,5]
+SUM = 10
 
-def nth_prime_number(n):
-    prime_count = 3
+def prime_list(n):
+    global SUM
     numb = 7
-    while prime_count != n:
+    while numb < n:
         if prime(numb):
-            prime_count += 1
-            nth_prime = numb
+            SUM += numb
             numb += 2
         else:
             numb += 2
-            
-    return nth_prime
+    return PRIMES
 
 def prime(n):
     is_prime = True
@@ -27,4 +27,5 @@ def prime(n):
 
 
 number = int(input("Enter a number: "))
-print(nth_prime_number(number))
+prime_list(number)
+print(SUM)
