@@ -10,14 +10,11 @@ def factors(j):
     #Became much faster when only testing integers up to the square root of j
     for k in range(1, int(math.floor(math.sqrt(j))+1)):
         if j % k == 0 & k != j // k:
-            if k <= j // 2 and (j // k) <= (j // 2):
-                n_factors += 2
-            else:
-                n_factors += 2
+            n_factors += 2
         elif j % k == 0 & k == j // k:
             #Case where k is square root of j
             n_factors += 1
-    print(f"{j} has {n_factors} factors:")
+    #print(f"{j} has {n_factors} factors:")
     return n_factors
 
 def main():
@@ -25,7 +22,7 @@ def main():
     triangle_number = 1
     i = 2
     while True:
-        triangle_number = triangle_number + i
+        triangle_number += i
         i += 1
         if factors(triangle_number) >= n:
             print(f"The first triangle number with over {n} factors is: {triangle_number}")
